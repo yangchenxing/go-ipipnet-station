@@ -22,3 +22,5 @@ _testmain.go
 *.exe
 *.test
 *.prof
+go-ipipnet-station.sublime-project
+go-ipipnet-station.sublime-workspace
