@@ -42,7 +42,8 @@ func TestSearch(t *testing.T) {
 		t.Error("search 254.254.254.254 fail:", err.Error())
 		t.FailNow()
 	}
-	if result != NotFound {
+	var notFound Result
+	if !result.Equal(notFound) {
 		t.Error("unexpected result of 254.254.254.254:", result)
 		t.FailNow()
 	}

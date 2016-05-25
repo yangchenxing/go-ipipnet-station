@@ -46,19 +46,9 @@ type Result struct {
 	Operator string
 }
 
-var (
-	// NotFound 未找到时的返回结果
-	NotFound = Result{
-		NetType:  UnknownNetType,
-		Location: nil,
-		Owner:    "",
-		Operator: "",
-	}
-)
-
 // Equal 对比两个Result是否相等
 func (v Result) Equal(other interface{}) bool {
-	w, ok := other.(*Result)
+	w, ok := other.(Result)
 	if !ok {
 		return false
 	}

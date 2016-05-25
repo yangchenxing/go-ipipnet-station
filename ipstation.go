@@ -47,12 +47,7 @@ func (index *Index) Initialize() error {
 func (index *Index) Search(ip net.IP) (result Result, err error) {
 	var value ipindex.Value
 	value, err = index.index.Search(ip)
-	if err != nil {
-		return
-	}
-	if value == nil {
-		result = NotFound
-	} else {
+	if err == nil && value != nil {
 		result = value.(Result)
 	}
 	return
